@@ -1,5 +1,8 @@
 ErrorDocument 404 "[404 error] If you're seeing this error after install, check this FAQ for the fix: https://sendy.co/troubleshooting#404-error"
 
+<IfModule mod_rewrite.c>
+</IfModule>
+
 Options +FollowSymLinks
 Options -Multiviews
 
