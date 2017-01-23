@@ -29,7 +29,7 @@ function fail($errorMsg)
 }
 dbConnect();
 $q = "SELECT COUNT(*)
-FROM information_schema.tables WHERE table_schema = '$dbName' 
+FROM information_schema.tables WHERE table_schema = '$dbName'
 AND (table_name = 'apps' OR table_name = 'campaigns' OR table_name = 'links' OR table_name = 'lists' OR table_name = 'login' OR table_name = 'subscribers')";
 $r = mysqli_query($mysqli, $q);
 if ($r) {
@@ -128,7 +128,7 @@ function start_app()
 	}
     if (isset($_SESSION[$_SESSION['license']])) {
 
-         $_SESSION[$_SESSION['license']] = 'Nulled by fire2000';
+         $_SESSION[$_SESSION['license']] = 'Cracked By Chaks';
     }
     session_write_close();
 }
