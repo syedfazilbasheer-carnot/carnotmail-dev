@@ -5,13 +5,14 @@
 
 	/*  Set the URL to your Sendy installation (without the trailing slash) */
 	define('APP_PATH', 'https://carnotmail.herokuapp.com/');
-	// mysql://b9809b7f27ca86:6aedbe38@us-cdbr-iron-east-04.cleardb.net/heroku_d9311a2a20ecb21?reconnect=true
+	// mysql://b9809b7f27ca86:6aedbe38@us-cdbr-iron-east-04.cleardb.net/heroku_d9311a2a20ecb21?reconnect=true ##Original
+	// mysql://b4d3d6bb9d14db:dde25aff@us-cdbr-iron-east-04.cleardb.net/heroku_1dd5cb244637831?reconnect=true ##Dev
 
 	/*  MySQL database connection credentials (please place values between the apostrophes) */
 	$dbHost = 'us-cdbr-iron-east-04.cleardb.net'; //MySQL Hostname
-	$dbUser = 'b9809b7f27ca86'; //MySQL Username
+	$dbUser = 'b4d3d6bb9d14db'; //MySQL Username
 	$dbPass = '6aedbe38'; //MySQL Password
-	$dbName = 'heroku_d9311a2a20ecb21'; //MySQL Database Name
+	$dbName = 'heroku_1dd5cb244637831'; //MySQL Database Name
 
 
 	//----------------------------------------------------------------------------------//
