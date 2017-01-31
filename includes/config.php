@@ -4,7 +4,7 @@
 	//----------------------------------------------------------------------------------//
 
 	/*  Set the URL to your Sendy installation (without the trailing slash) */
-	define('APP_PATH', 'https://carnotmail.herokuapp.com/');
+	define('APP_PATH', 'https://carnotmail-dev.herokuapp.com/');
 	// mysql://b9809b7f27ca86:6aedbe38@us-cdbr-iron-east-04.cleardb.net/heroku_d9311a2a20ecb21?reconnect=true ##Original
 	// mysql://b4d3d6bb9d14db:dde25aff@us-cdbr-iron-east-04.cleardb.net/heroku_1dd5cb244637831?reconnect=true ##Dev
 
