@@ -11,7 +11,7 @@
 	/*  MySQL database connection credentials (please place values between the apostrophes) */
 	$dbHost = 'us-cdbr-iron-east-04.cleardb.net'; //MySQL Hostname
 	$dbUser = 'b4d3d6bb9d14db'; //MySQL Username
-	$dbPass = '6aedbe38'; //MySQL Password
+	$dbPass = 'dde25aff'; //MySQL Password
 	$dbName = 'heroku_1dd5cb244637831'; //MySQL Database Name
 
 
