@@ -7,12 +7,13 @@
 	define('APP_PATH', 'https://carnotmail-dev.herokuapp.com/');
 	// mysql://b9809b7f27ca86:6aedbe38@us-cdbr-iron-east-04.cleardb.net/heroku_d9311a2a20ecb21?reconnect=true ##Original
 	// mysql://b4d3d6bb9d14db:dde25aff@us-cdbr-iron-east-04.cleardb.net/heroku_1dd5cb244637831?reconnect=true ##Dev
+	// mysql://b6f6629de676a3:289d11d5@us-cdbr-iron-east-04.cleardb.net/heroku_dd0dd4614265a37?reconnect=true ##Old Dev
 
 	/*  MySQL database connection credentials (please place values between the apostrophes) */
 	$dbHost = 'us-cdbr-iron-east-04.cleardb.net'; //MySQL Hostname
-	$dbUser = 'b4d3d6bb9d14db'; //MySQL Username
-	$dbPass = 'dde25aff'; //MySQL Password
-	$dbName = 'heroku_1dd5cb244637831'; //MySQL Database Name
+	$dbUser = 'b6f6629de676a3'; //MySQL Username
+	$dbPass = '289d11d5'; //MySQL Password
+	$dbName = 'heroku_dd0dd4614265a37'; //MySQL Database Name
 
 
 	//----------------------------------------------------------------------------------//
