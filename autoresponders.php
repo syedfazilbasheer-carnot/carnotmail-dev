@@ -1,5 +1,4 @@
 <?php include('includes/helpers/class.phpmailer.php');?>
-<?php error_log(print_r("ar running!!!!"), TRUE);?>
 <?php 
 	include('includes/config.php');
 	//--------------------------------------------------------------//
@@ -12,6 +11,8 @@
 	    global $dbPass;
 	    global $dbName;
 	    global $dbPort;
+
+	    error_log("ar running 1!!!!");
 	    
 	    // Attempt to connect to database server
 	    if(isset($dbPort)) $mysqli = new mysqli($dbHost, $dbUser, $dbPass, $dbName, $dbPort);
@@ -40,6 +41,8 @@
 	//setup cron
 	$q = 'SELECT id, cron_ares, timezone FROM login LIMIT 1';
 	$r = mysqli_query($mysqli, $q);
+	error_log("ar running 2!!!!");
+
 	if ($r)
 	{
 	    while($row = mysqli_fetch_array($r))
