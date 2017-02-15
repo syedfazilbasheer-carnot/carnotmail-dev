@@ -34,7 +34,7 @@
 	}
 	// connect to database
 	dbConnect();
-	echo "sch running!!!!!";
+	error_log(print_r("sch running!!!!"), TRUE);
 ?>
 <?php include('includes/helpers/short.php');?>
 <?php include('includes/helpers/locale.php');?>
