@@ -1,5 +1,5 @@
 <?php ini_set('display_errors', 0);?>
-<?php error_log(print_r("sch running!!!!"), TRUE);;?>
+<?php error_log(print_r("sch running!!!!"), TRUE);?>
 <?php include('includes/helpers/class.phpmailer.php');?>
 <?php 
 	include('includes/config.php');
@@ -35,7 +35,6 @@
 	}
 	// connect to database
 	dbConnect();
-	error_log(print_r("sch running!!!!"), TRUE);
 ?>
 <?php include('includes/helpers/short.php');?>
 <?php include('includes/helpers/locale.php');?>
