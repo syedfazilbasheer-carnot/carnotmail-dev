@@ -33,6 +33,7 @@
 	}
 	// connect to database
 	dbConnect();
+	echo "ar running!!!!";
 ?>
 <?php include('includes/helpers/short.php');?>
 <?php 	

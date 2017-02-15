@@ -34,6 +34,7 @@
 	}
 	// connect to database
 	dbConnect();
+	echo "sch running!!!!!";
 ?>
 <?php include('includes/helpers/short.php');?>
 <?php include('includes/helpers/locale.php');?>
