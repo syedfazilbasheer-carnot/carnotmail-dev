@@ -1,4 +1,5 @@
 <?php include('includes/header.php');?>
+<?php error_log("this is awesome!"); ?>
 <?php include('includes/login/auth.php');?>
 <?php include('includes/dashboard/main.php');?>
 <?php
