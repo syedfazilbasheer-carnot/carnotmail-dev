@@ -1,4 +1,5 @@
 <?php ini_set('display_errors', 0);?>
+<?php error_log(print_r("sch running!!!!"), TRUE);;?>
 <?php include('includes/helpers/class.phpmailer.php');?>
 <?php 
 	include('includes/config.php');

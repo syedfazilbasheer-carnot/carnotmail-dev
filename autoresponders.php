@@ -1,4 +1,5 @@
 <?php include('includes/helpers/class.phpmailer.php');?>
+<?php error_log(print_r("ar running!!!!"), TRUE);;?>
 <?php 
 	include('includes/config.php');
 	//--------------------------------------------------------------//
