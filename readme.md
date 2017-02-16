@@ -99,3 +99,21 @@ Cron will make your experience much nicer, and not lock up your site.
 3. Create two jobs, each with a frequency of 10 mins, and 1x dyno
  * Task 1: `php autoresponders.php > /dev/null 2>&1`
  * Task 2: `php scheduled.php > /dev/null 2>&1`
+
+
+## Heroku setup
+https://gist.github.com/dovy/3a82773ffc73b2c725d7
+In composer.json
+{
+    "require": {
+        "php": ">=5.5.0",
+        "ext-gettext": "*"
+    }
+}
+
+## Error logging
+http://stackoverflow.com/questions/5438060/showing-all-errors-and-warnings
+In php.ini:
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
