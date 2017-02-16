@@ -11,9 +11,17 @@ function dbConnect()
     global $dbPass;
     global $dbName;
     global $dbPort;
-    if (isset($dbPort))
+    if (isset($dbPort)) {
+        error_log("this is awesome!");
+        error_log($dbHost);
+        error_log($dbUser);
+        error_log($dbPass);
+        error_log($dbName);
+        error_log($dbPort);
         $mysqli = new mysqli($dbHost, $dbUser, $dbPass, $dbName, $dbPort);
+    }
     else
+        error_log("fail");
         $mysqli = new mysqli($dbHost, $dbUser, $dbPass, $dbName);
     if ($mysqli->connect_error) {
         fail("<!DOCTYPE html><html><head><meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\"/><link rel=\"Shortcut Icon\" type=\"image/ico\" href=\"/img/favicon.png\"><title>" . _('Can\'t connect to database') . "</title></head><style type=\"text/css\">body{background: #ffffff;font-family: Helvetica, Arial;}#wrapper{background: #f2f2f2;width: 300px;height: 130px;margin: -140px 0 0 -150px;position: absolute;top: 50%;left: 50%;-webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px;}p{text-align: center;line-height: 18px;font-size: 12px;padding: 0 30px;}h2{font-weight: normal;text-align: center;font-size: 20px;}a{color: #000;}a:hover{text-decoration: none;}</style><body><div id=\"wrapper\"><p><h2>" . _('Can\'t connect to database') . "</h2></p><p>" . _('There is a problem connecting to the database. Please try again later or see this <a href="http://nullrefer.com/?https://sendy.co/troubleshooting#cannot-connect-to-database" target="_blank">troubleshooting tip</a>.') . "</p></div></body></html>");
