@@ -12,7 +12,7 @@
 	    global $dbName;
 	    global $dbPort;
 
-	    error_log("ar running 1!!!!");
+	    print 'ar running 1!!!!';
 	    
 	    // Attempt to connect to database server
 	    if(isset($dbPort)) $mysqli = new mysqli($dbHost, $dbUser, $dbPass, $dbName, $dbPort);
