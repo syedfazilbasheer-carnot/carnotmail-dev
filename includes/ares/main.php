@@ -7,6 +7,7 @@
 	function get_app_data($val)
 	//------------------------------------------------------//
 	{
+		error_log("please log this error!!!");
 		global $mysqli;
 		$q = 'SELECT '.$val.' FROM apps WHERE id = "'.get_app_info('app').'" AND userID = '.get_app_info('main_userID');
 		$r = mysqli_query($mysqli, $q);
