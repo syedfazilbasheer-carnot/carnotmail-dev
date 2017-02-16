@@ -1,8 +1,8 @@
 <?php include('includes/header.php');?>
-<?php error_log("this is awesome!"); ?>
 <?php include('includes/login/auth.php');?>
 <?php include('includes/dashboard/main.php');?>
 <?php
+	error_log("this is where i can log!?");
 	if(get_app_info('is_sub_user')) 
 	{
 		if(get_app_info('app')!=get_app_info('restricted_to_app'))

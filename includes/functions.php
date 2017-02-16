@@ -12,12 +12,6 @@ function dbConnect()
     global $dbName;
     global $dbPort;
     if (isset($dbPort)) {
-        error_log("this is awesome!");
-        error_log($dbHost);
-        error_log($dbUser);
-        error_log($dbPass);
-        error_log($dbName);
-        error_log($dbPort);
         $mysqli = new mysqli($dbHost, $dbUser, $dbPass, $dbName, $dbPort);
     }
     else
