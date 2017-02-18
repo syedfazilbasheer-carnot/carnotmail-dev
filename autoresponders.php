@@ -86,6 +86,7 @@
 	if ($r && mysqli_num_rows($r) > 0)
 	{
 		error_log("result and more than 0 rows");
+		error_log(mysqli_num_rows($r));
 	    while($row = mysqli_fetch_array($r))
 	    {
 			$ares_id = $row['id'];
