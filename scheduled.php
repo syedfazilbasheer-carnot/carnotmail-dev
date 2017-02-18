@@ -1,7 +1,7 @@
 <?php ini_set('display_errors', 0);?>
-<?php error_log(print_r("sch running!!!!"), TRUE);?>
 <?php include('includes/helpers/class.phpmailer.php');?>
 <?php 
+	error_log("sch running 1!!!!");
 	include('includes/config.php');
 	//--------------------------------------------------------------//
 	function dbConnect() { //Connect to database
