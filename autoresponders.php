@@ -83,7 +83,7 @@
 	//Process Type 1 autoresponders (new subscriber)
 	$q = 'SELECT ares_emails.id, ares_emails.from_name, ares_emails.from_email, ares_emails.reply_to, ares_emails.title, ares_emails.plain_text, ares_emails.html_text, ares_emails.query_string, ares_emails.time_condition, ares_emails.timezone, ares.list FROM ares, ares_emails WHERE ares_emails.ares_id = ares.id AND ares.type = 1';
 	$r = mysqli_query($mysqli, $q);
-	error_log($r);
+	error_log((string)$r);
 	if ($r && mysqli_num_rows($r) > 0)
 	{
 	    while($row = mysqli_fetch_array($r))
