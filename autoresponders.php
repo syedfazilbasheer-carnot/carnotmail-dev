@@ -90,6 +90,7 @@
 	    while($row = mysqli_fetch_array($r))
 	    {
 	    	error_log($row['title']);
+	    	error_log($row['list']);
 			$ares_id = $row['id'];
 			$from_name = stripslashes($row['from_name']);
 			$from_email = $row['from_email'];
@@ -155,6 +156,7 @@
 			}
 			
 			//select subscribers
+			error_log($list)
 			$q2 = 'SELECT * FROM subscribers WHERE list = '.$list.' AND unsubscribed = 0 AND bounced = 0 AND complaint = 0 AND confirmed = 1 AND join_date is not NULL GROUP BY email ORDER BY id ASC';
 			$r2 = mysqli_query($mysqli, $q2);
 			if ($r2 && mysqli_num_rows($r2) > 0)
