@@ -89,7 +89,7 @@
 		error_log(mysqli_num_rows($r));
 	    while($row = mysqli_fetch_array($r))
 	    {
-	    	error_log($row);
+	    	error_log($row['title']);
 			$ares_id = $row['id'];
 			$from_name = stripslashes($row['from_name']);
 			$from_email = $row['from_email'];
