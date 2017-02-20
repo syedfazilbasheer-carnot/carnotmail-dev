@@ -60,6 +60,7 @@
 			}
 	    }  
 	}
+	error_log("sch running 3!!!!");
 	
 	$the_offset = '';
 	$offset = isset($_GET['offset']) ? $_GET['offset'] : '';
@@ -69,9 +70,11 @@
 	$r = mysqli_query($mysqli, $q);
 	if ($r && mysqli_num_rows($r) > 0)
 	{
+		error_log("sch running 4!!!!");
 	    while($row = mysqli_fetch_array($r))
 	    {
 	    	//prepare variables
+		error_log("sch running 5!!!!");
 	    	$timezone = $row['timezone'];
 	    	if($timezone!='0' && $timezone!='') date_default_timezone_set($timezone);
 			$sent = $row['sent'];
@@ -106,8 +109,10 @@
 			$r2 = mysqli_query($mysqli, $q2);
 			if ($r2)
 			{
+				error_log("sch running 6!!!!");
 			    while($row = mysqli_fetch_array($r2))
 			    {
+					error_log("sch running 7!!!!");
 					$s3_key = $row['s3_key'];
 					$s3_secret = $row['s3_secret'];
 					$user_name = $row['name'];
