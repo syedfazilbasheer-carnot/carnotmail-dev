@@ -567,6 +567,7 @@
 				    $r4 = mysqli_query($mysqli, $q4);
 				    if ($r4 && mysqli_num_rows($r4) > 0)
 				    {
+				    	error_log("no of rows in queue: ".mysqli_num_rows($r4));
 				        while($row = mysqli_fetch_array($r4))
 				        {
 				        	$request_url = 'https://'.$ses_endpoint;

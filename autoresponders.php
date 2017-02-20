@@ -154,13 +154,14 @@
 					$app = $row['id'];
 			    }  
 			}
+			error_log("list: ".$list);
 			
 			//select subscribers
-			error_log("list: ".$list);
 			$q2 = 'SELECT * FROM subscribers WHERE list = '.$list.' AND unsubscribed = 0 AND bounced = 0 AND complaint = 0 AND confirmed = 1 AND join_date is not NULL GROUP BY email ORDER BY id ASC';
 			$r2 = mysqli_query($mysqli, $q2);
 			if ($r2 && mysqli_num_rows($r2) > 0)
 			{
+				error_log("non zero subscribers: ".mysql_num_rows($r2));
 			    while($row = mysqli_fetch_array($r2))
 			    {
 			    	$subscriber_id = $row['id'];
