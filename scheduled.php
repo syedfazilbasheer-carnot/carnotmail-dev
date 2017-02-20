@@ -74,7 +74,7 @@
 	    while($row = mysqli_fetch_array($r))
 	    {
 	    	//prepare variables
-		error_log("sch running 5!!!!");
+			error_log("sch running 5!!!!");
 	    	$timezone = $row['timezone'];
 	    	if($timezone!='0' && $timezone!='') date_default_timezone_set($timezone);
 			$sent = $row['sent'];
@@ -137,8 +137,9 @@
 			}
 			
 			//check if we should send email now
-			if((($time>=$send_date && $time<$send_date+300) && $sent=='') || (($send_date<$time) && $sent=='') || ($send_date=='0' && $timezone=='0'))
+			if((($time>=$send_date && $time<$send_date+300000) && $sent=='') || (($send_date<$time) && $sent=='') || ($send_date=='0' && $timezone=='0'))
 			{
+				error_log("sch running 8!!!");
 				//if resuming
 				if($offset!='')
 					$q = 'UPDATE campaigns SET send_date=NULL, lists=NULL, timezone=NULL WHERE id = '.$campaign_id;
@@ -700,9 +701,7 @@
 				    
 				    if($to_send_num=='' || $to_send>$to_send_num) $to_send_num = $to_send;
 				    
-				    $message_to_me_plain = _('Your campaign has been successfully sent to')." $to_send_num "._('recipients')."!
-
-"._('View report')." - $app_path/report?i=$app&c=$campaign_id";
+				    $message_to_me_plain = _('Your campaign has been successfully sent to')." $to_send_num "._('recipients')."!"._('View report')." - $app_path/report?i=$app&c=$campaign_id";
 
 				    $message_to_me_html = "
 				    <div style=\"margin: -10px -10px; padding:50px 30px 50px 30px; height:100%;\">
