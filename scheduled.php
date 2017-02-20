@@ -39,6 +39,7 @@
 <?php include('includes/helpers/short.php');?>
 <?php include('includes/helpers/locale.php');?>
 <?php 	
+	error_log("sch running 2!!!!");
 	//setup cron
 	$q = 'SELECT id, cron, send_rate, ses_endpoint FROM login LIMIT 1';
 	$r = mysqli_query($mysqli, $q);
