@@ -565,9 +565,9 @@
 				    
 				    $q4 = 'SELECT id, query_str, subscriber_id FROM queue WHERE campaign_id = '.$campaign_id.' AND sent = 0';
 				    $r4 = mysqli_query($mysqli, $q4);
+			    	error_log("no of rows in queue: ".mysqli_num_rows($r4));
 				    if ($r4 && mysqli_num_rows($r4) > 0)
 				    {
-				    	error_log("no of rows in queue: ".mysqli_num_rows($r4));
 				        while($row = mysqli_fetch_array($r4))
 				        {
 				        	$request_url = 'https://'.$ses_endpoint;
