@@ -66,7 +66,7 @@
 	$offset = isset($_GET['offset']) ? $_GET['offset'] : '';
 
 	//Dummy queries:
-	$qx = 'count * from campaigns;';
+	$qx = 'count * from campaigns';
 	$rx = mysqli_query($mysqli, $qx);
 	error_log("no of rows in campaigns: ".mysqli_num_rows($rx));
 	
