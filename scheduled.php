@@ -68,7 +68,7 @@
 	//Dummy queries:
 	$qx = 'count * from campaigns';
 	$rx = mysqli_query($mysqli, $qx);
-	error_log("no of rows in campaigns: ".mysqli_num_rows($rx));
+	error_log("no of rows in campaigns: ".$rx);
 	
 	//Check campaigns database
 	$q = 'SELECT timezone, sent, id, app, userID, to_send, to_send_lists, recipients, timeout_check, send_date, lists, from_name, from_email, reply_to, title, label, plain_text, html_text, query_string FROM campaigns WHERE (send_date !="" AND lists !="" AND timezone != "") OR (to_send > recipients) ORDER BY sent DESC';
