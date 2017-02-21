@@ -1,1 +1,1 @@
-<?php error_log("LOGTESTING!"); ?>
+<?php error_log("this is awesome!"); ?>

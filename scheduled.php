@@ -1,7 +1,7 @@
 <?php ini_set('display_errors', 0);?>
 <?php include('includes/helpers/class.phpmailer.php');?>
 <?php 
-	// error_log("sch running 1!!!!");
+	error_log("sch running 1!!!!");
 	include('includes/config.php');
 	//--------------------------------------------------------------//
 	function dbConnect() { //Connect to database
@@ -39,7 +39,7 @@
 <?php include('includes/helpers/short.php');?>
 <?php include('includes/helpers/locale.php');?>
 <?php 	
-	// error_log("sch running 2!!!!");
+	error_log("sch running 2!!!!");
 	//setup cron
 	$q = 'SELECT id, cron, send_rate, ses_endpoint FROM login LIMIT 1';
 	$r = mysqli_query($mysqli, $q);
@@ -60,7 +60,7 @@
 			}
 	    }  
 	}
-	// error_log("sch running 3!!!!");
+	error_log("sch running 3!!!!");
 	
 	$the_offset = '';
 	$offset = isset($_GET['offset']) ? $_GET['offset'] : '';
@@ -68,16 +68,16 @@
 	//Dummy queries:
 	$qx = 'select * from campaigns';
 	$rx = mysqli_query($mysqli, $qx);
-	// error_log("no of rows in campaigns: ".mysqli_num_rows($rx));
+	error_log("no of rows in campaigns: ".mysqli_num_rows($rx));
 	if ($rx && mysqli_num_rows($rx) > 0) 
 	{
 		while($row = mysqli_fetch_array($rx))
 		{
-			// error_log("campaing send date: ".$row['send_date']);
-			// error_log("campaing lists: ".$row['lists']);
-			// error_log("campaing timezone: ".$row['timezone']);
-			// error_log("campaing to_send: ".$row['to_send']);
-			// error_log("campaing recipients: ".$row['recipients']);
+			error_log("campaing send date: ".$row['send_date']);
+			error_log("campaing lists: ".$row['lists']);
+			error_log("campaing timezone: ".$row['timezone']);
+			error_log("campaing to_send: ".$row['to_send']);
+			error_log("campaing recipients: ".$row['recipients']);
 		}
 		
 	}
@@ -85,14 +85,14 @@
 	//Check campaigns database
 	$q = 'SELECT timezone, sent, id, app, userID, to_send, to_send_lists, recipients, timeout_check, send_date, lists, from_name, from_email, reply_to, title, label, plain_text, html_text, query_string FROM campaigns WHERE (send_date !="" AND lists !="" AND timezone != "") OR (to_send > recipients) ORDER BY sent DESC';
 	$r = mysqli_query($mysqli, $q);
-	// error_log("no of rows in campaigns: ".mysqli_num_rows($r));
+	error_log("no of rows in campaigns: ".mysqli_num_rows($r));
 	if ($r && mysqli_num_rows($r) > 0)
 	{
-		// error_log("sch running 4!!!!");
+		error_log("sch running 4!!!!");
 	    while($row = mysqli_fetch_array($r))
 	    {
 	    	//prepare variables
-			// error_log("sch running 5!!!!");
+			error_log("sch running 5!!!!");
 	    	$timezone = $row['timezone'];
 	    	if($timezone!='0' && $timezone!='') date_default_timezone_set($timezone);
 			$sent = $row['sent'];
@@ -127,10 +127,10 @@
 			$r2 = mysqli_query($mysqli, $q2);
 			if ($r2)
 			{
-				// error_log("sch running 6!!!!");
+				error_log("sch running 6!!!!");
 			    while($row = mysqli_fetch_array($r2))
 			    {
-					// error_log("sch running 7!!!!");
+					error_log("sch running 7!!!!");
 					$s3_key = $row['s3_key'];
 					$s3_secret = $row['s3_secret'];
 					$user_name = $row['name'];
@@ -157,7 +157,7 @@
 			//check if we should send email now
 			if((($time>=$send_date && $time<$send_date+300000) && $sent=='') || (($send_date<$time) && $sent=='') || ($send_date=='0' && $timezone=='0'))
 			{
-				// error_log("sch running 8!!!");
+				error_log("sch running 8!!!");
 				//if resuming
 				if($offset!='')
 					$q = 'UPDATE campaigns SET send_date=NULL, lists=NULL, timezone=NULL WHERE id = '.$campaign_id;
@@ -590,7 +590,7 @@
 				    
 				    $q4 = 'SELECT id, query_str, subscriber_id FROM queue WHERE campaign_id = '.$campaign_id.' AND sent = 0';
 				    $r4 = mysqli_query($mysqli, $q4);
-			    	// error_log("no of rows in queue: ".mysqli_num_rows($r4));
+			    	error_log("no of rows in queue: ".mysqli_num_rows($r4));
 				    if ($r4 && mysqli_num_rows($r4) > 0)
 				    {
 				        while($row = mysqli_fetch_array($r4))
