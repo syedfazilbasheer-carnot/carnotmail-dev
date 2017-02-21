@@ -91,6 +91,7 @@
 	    	error_log("new ares");
 	    	error_log("title: ".$row['title']);
 	    	error_log("list: ".$row['list']);
+	    	error_log("time_condition: ".$row['time_condition']);
 			$ares_id = $row['id'];
 			$from_name = stripslashes($row['from_name']);
 			$from_email = $row['from_email'];
