@@ -162,7 +162,7 @@
 			$r2 = mysqli_query($mysqli, $q2);
 			if ($r2 && mysqli_num_rows($r2) > 0)
 			{
-				error_log("non zero subscribers: ".mysql_num_rows($r2));
+				error_log("non zero subscribers: ".mysqli_num_rows($r2));
 			    while($row = mysqli_fetch_array($r2))
 			    {
 			    	$subscriber_id = $row['id'];
