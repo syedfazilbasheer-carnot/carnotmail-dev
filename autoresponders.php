@@ -85,10 +85,10 @@
 	$r = mysqli_query($mysqli, $q);
 	if ($r && mysqli_num_rows($r) > 0)
 	{
-		error_log("result and more than 0 rows");
-		error_log("num of rows: ".mysqli_num_rows($r));
+		error_log("ares num of rows: ".mysqli_num_rows($r));
 	    while($row = mysqli_fetch_array($r))
 	    {
+	    	error_log("new ares")
 	    	error_log("title: ".$row['title']);
 	    	error_log("list: ".$row['list']);
 			$ares_id = $row['id'];
