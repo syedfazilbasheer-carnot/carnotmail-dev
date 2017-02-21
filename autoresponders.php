@@ -154,6 +154,7 @@
 					$app = $row['id'];
 			    }  
 			}
+			error_log("line 157");
 			error_log("list: ".$list);
 			
 			//select subscribers
