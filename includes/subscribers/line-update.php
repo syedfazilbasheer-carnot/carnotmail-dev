@@ -54,7 +54,7 @@ for($i=0;$i<count($line_array);$i++)
 			
 			if ($validator->check_email_address(trim($email))) 
 			{
-				$q = 'INSERT INTO subscribers (userID, name, email, list, timestamp, join_date) values('.$userID.', "'.$name.'", "'.trim($email).'", '.$listID.', '.$time.','.$time')';
+				$q = 'INSERT INTO subscribers (userID, name, email, list, timestamp, join_date) values('.$userID.', "'.$name.'", "'.trim($email).'", '.$listID.', '.$time.','.$time.')';
 				$r = mysqli_query($mysqli, $q);
 				if ($r){
 					error_log("time: ".);
