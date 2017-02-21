@@ -40,6 +40,7 @@
 	
 	//vars
 	$time = time();
+	error_log("time of adding user: ".$time);
 	$join_date = round(time()/60)*60;
 	$already_subscribed = false;
 	$feedback = '';
