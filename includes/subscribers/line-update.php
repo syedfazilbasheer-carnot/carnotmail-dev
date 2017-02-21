@@ -57,7 +57,7 @@ for($i=0;$i<count($line_array);$i++)
 				$q = 'INSERT INTO subscribers (userID, name, email, list, timestamp) values('.$userID.', "'.$name.'", "'.trim($email).'", '.$listID.', '.$time.')';
 				$r = mysqli_query($mysqli, $q);
 				if ($r){
-					error_log("time")
+					error_log("time");
 				}
 			}
 		}
