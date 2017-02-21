@@ -9,6 +9,7 @@ $app = $_POST['app'];
 $listID = mysqli_real_escape_string($mysqli, $_POST['list_id']);
 $line = $_POST['line'];
 $time = time();
+error_log("time of adding user: ".$time);
 /********************************/
 
 //if user did not enter anything
@@ -55,7 +56,9 @@ for($i=0;$i<count($line_array);$i++)
 			{
 				$q = 'INSERT INTO subscribers (userID, name, email, list, timestamp) values('.$userID.', "'.$name.'", "'.trim($email).'", '.$listID.', '.$time.')';
 				$r = mysqli_query($mysqli, $q);
-				if ($r){}
+				if ($r){
+					error_log("time")
+				}
 			}
 		}
 	}
