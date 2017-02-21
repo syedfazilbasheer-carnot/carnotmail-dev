@@ -88,7 +88,7 @@
 		error_log("ares num of rows: ".mysqli_num_rows($r));
 	    while($row = mysqli_fetch_array($r))
 	    {
-	    	error_log("new ares")
+	    	error_log("new ares");
 	    	error_log("title: ".$row['title']);
 	    	error_log("list: ".$row['list']);
 			$ares_id = $row['id'];
