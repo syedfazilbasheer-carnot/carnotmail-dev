@@ -128,6 +128,7 @@
 			if ($validator->check_email_address($email)) {}
 			else
 			{
+				error_log("false");
 				if($return_boolean=='true')
 				{
 					echo 'Invalid email address.';
