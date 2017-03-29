@@ -46,7 +46,7 @@
 	$feedback = '';
 	error_log($_SERVER['REQUEST_METHOD']);
 	//get variable
-	if(isset($_GET['i']))
+	if($_SERVER['REQUEST_METHOD'] === 'GET')
 	{
 		error_log("logging post 2");
 		$i = mysqli_real_escape_string($mysqli, $_GET['i']);
@@ -87,7 +87,7 @@
 			    $feedback = _('Email address is invalid23.');
 		}
 	}
-	else if(isset($_POST['email']))//email posted from subscribe form or API
+	else if($_SERVER['REQUEST_METHOD'] === 'POST')//email posted from subscribe form or API
 	{		
 		error_log("logging post");
 		//parameters
