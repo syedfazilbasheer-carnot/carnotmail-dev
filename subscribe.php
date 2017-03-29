@@ -120,6 +120,8 @@
 		{
 			//check if email is valid
 			$validator = new EmailAddressValidator;
+			error_log("here");
+			error_log($validator->check_email_address($email));
 			if ($validator->check_email_address($email)) {}
 			else
 			{
