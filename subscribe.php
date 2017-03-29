@@ -44,7 +44,7 @@
 	$join_date = round(time()/60)*60;
 	$already_subscribed = false;
 	$feedback = '';
-	
+	error_log($_SERVER['REQUEST_METHOD']);
 	//get variable
 	if(isset($_GET['i']))
 	{
