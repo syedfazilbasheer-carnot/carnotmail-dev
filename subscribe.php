@@ -122,6 +122,9 @@
 			$validator = new EmailAddressValidator;
 			error_log("here");
 			error_log($validator->check_email_address($email));
+			if (1) {
+				error_log("true");
+			}
 			if ($validator->check_email_address($email)) {}
 			else
 			{
