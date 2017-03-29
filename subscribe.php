@@ -40,21 +40,14 @@
 	
 	//vars
 	$time = time();
-	error_log("time of adding user: ".$time);
 	$join_date = round(time()/60)*60;
 	$already_subscribed = false;
 	$feedback = '';
-	error_log($_SERVER['REQUEST_METHOD']);
 	//get variable
 	if($_SERVER['REQUEST_METHOD'] === 'GET')
 	{
-		error_log("logging post 2");
 		$i = mysqli_real_escape_string($mysqli, $_GET['i']);
-		error_log("ti");
-		error_log($time);
-		error_log($i);
 		$i_array = explode('/', $i);
-		error_log($i_array[0]);
 		$email = trim($i_array[0]);
 		$email = str_replace(" ", "+", $email);
         $email = str_replace("%20", "+", $email);
@@ -89,14 +82,10 @@
 	}
 	else if($_SERVER['REQUEST_METHOD'] === 'POST')//email posted from subscribe form or API
 	{		
-		error_log("logging post");
 		//parameters
 		$email = mysqli_real_escape_string($mysqli, trim($_POST['email'])); //compulsory
-		error_log($email);
 		$name = strip_tags(mysqli_real_escape_string($mysqli, $_POST['name'])); //optional
-		error_log($name);
 		$list_id = strip_tags(short(mysqli_real_escape_string($mysqli, $_POST['list']), true)); //compulsory
-		error_log($list_id);
 		$return_boolean = strip_tags(mysqli_real_escape_string($mysqli, $_POST['boolean'])); //compulsory
 		
 		//Set language
@@ -120,15 +109,9 @@
 		{
 			//check if email is valid
 			$validator = new EmailAddressValidator;
-			error_log("here");
-			error_log($validator->check_email_address($email));
-			if (1) {
-				error_log("true");
-			}
 			if ($validator->check_email_address($email)) {}
 			else
 			{
-				error_log("false");
 				if($return_boolean=='true')
 				{
 					echo 'Invalid email address.';
