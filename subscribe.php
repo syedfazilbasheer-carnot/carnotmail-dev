@@ -84,7 +84,7 @@
 				exit;
 			}
 			else
-			    $feedback = _('Email address is invalid.');
+			    $feedback = _('Email address is invalid23.');
 		}
 	}
 	else if(isset($_POST['email']))//email posted from subscribe form or API
