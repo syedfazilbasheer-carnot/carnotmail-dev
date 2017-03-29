@@ -49,8 +49,9 @@
 	if(isset($_GET['i']))
 	{
 		error_log("logging post 2");
-		error_log($_GET);
 		$i = mysqli_real_escape_string($mysqli, $_GET['i']);
+		error_log("$i");
+		error_log($i);
 		$i_array = explode('/', $i);
 		$email = trim($i_array[0]);
 		$email = str_replace(" ", "+", $email);
