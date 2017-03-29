@@ -51,6 +51,7 @@
 		error_log("logging post 2");
 		$i = mysqli_real_escape_string($mysqli, $_GET['i']);
 		error_log("ti");
+		error_log($time);
 		error_log($i);
 		$i_array = explode('/', $i);
 		error_log($i_array[0]);
