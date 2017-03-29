@@ -49,7 +49,7 @@
 	if(isset($_GET['i']))
 	{
 		error_log("logging post 2");
-		error_log($_POST);
+		error_log($_GET);
 		$i = mysqli_real_escape_string($mysqli, $_GET['i']);
 		$i_array = explode('/', $i);
 		$email = trim($i_array[0]);
