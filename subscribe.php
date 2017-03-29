@@ -53,6 +53,7 @@
 		error_log("ti");
 		error_log($i);
 		$i_array = explode('/', $i);
+		error_log($i_array);
 		$email = trim($i_array[0]);
 		$email = str_replace(" ", "+", $email);
         $email = str_replace("%20", "+", $email);
