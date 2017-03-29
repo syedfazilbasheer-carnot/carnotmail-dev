@@ -90,11 +90,13 @@
 	if(isset($_POST['email']))//email posted from subscribe form or API
 	{		
 		error_log("logging post");
-		error_log($_POST);
 		//parameters
 		$email = mysqli_real_escape_string($mysqli, trim($_POST['email'])); //compulsory
+		error_log($email);
 		$name = strip_tags(mysqli_real_escape_string($mysqli, $_POST['name'])); //optional
+		error_log($name);
 		$list_id = strip_tags(short(mysqli_real_escape_string($mysqli, $_POST['list']), true)); //compulsory
+		error_log($list_id);
 		$return_boolean = strip_tags(mysqli_real_escape_string($mysqli, $_POST['boolean'])); //compulsory
 		
 		//Set language
