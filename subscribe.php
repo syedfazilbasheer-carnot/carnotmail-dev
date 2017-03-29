@@ -87,7 +87,7 @@
 			    $feedback = _('Email address is invalid.');
 		}
 	}
-	if(isset($_POST['email']))//email posted from subscribe form or API
+	else if(isset($_POST['email']))//email posted from subscribe form or API
 	{		
 		error_log("logging post");
 		//parameters
@@ -135,7 +135,7 @@
 					exit;
 				}
 				else
-				    $feedback = _('Email address is invalid.');
+				    $feedback = _('Email address is invalid1.');
 			}
 		}
 		
