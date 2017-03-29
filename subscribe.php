@@ -84,6 +84,7 @@
 	}
 	else if(isset($_POST['email']))//email posted from subscribe form or API
 	{		
+		error_log($_POST);
 		//parameters
 		$email = mysqli_real_escape_string($mysqli, trim($_POST['email'])); //compulsory
 		$name = strip_tags(mysqli_real_escape_string($mysqli, $_POST['name'])); //optional

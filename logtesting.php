@@ -1,1 +1,0 @@
-<?php error_log("this is awesome!"); ?>

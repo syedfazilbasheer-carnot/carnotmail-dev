@@ -1,7 +1,6 @@
 <?php include('includes/header.php');?>
 <?php include('includes/login/auth.php');?>
 <?php
-	error_log("this is awesome!");
 	if(get_app_info('is_sub_user')) 
 	{
 		echo '<script type="text/javascript">window.location="'.addslashes(get_app_info('path')).'/app?i='.get_app_info('restricted_to_app').'"</script>';

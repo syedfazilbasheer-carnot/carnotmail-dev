@@ -39,7 +39,6 @@
 	//setup cron
 	$q = 'SELECT id, cron_ares, timezone FROM login LIMIT 1';
 	$r = mysqli_query($mysqli, $q);
-	error_log("ar running 2!!!!");
 
 	if ($r)
 	{
@@ -85,13 +84,8 @@
 	$r = mysqli_query($mysqli, $q);
 	if ($r && mysqli_num_rows($r) > 0)
 	{
-		error_log("ares num of rows: ".mysqli_num_rows($r));
 	    while($row = mysqli_fetch_array($r))
 	    {
-	    	error_log("new ares");
-	    	error_log("title: ".$row['title']);
-	    	error_log("list: ".$row['list']);
-	    	error_log("time_condition: ".$row['time_condition']);
 			$ares_id = $row['id'];
 			$from_name = stripslashes($row['from_name']);
 			$from_email = $row['from_email'];
@@ -155,14 +149,12 @@
 					$app = $row['id'];
 			    }  
 			}
-			error_log("line 157");
 			
 			//select subscribers
 			$q2 = 'SELECT * FROM subscribers WHERE list = '.$list.' AND unsubscribed = 0 AND bounced = 0 AND complaint = 0 AND confirmed = 1 AND join_date is not NULL GROUP BY email ORDER BY id ASC';
 			$r2 = mysqli_query($mysqli, $q2);
 			if ($r2 && mysqli_num_rows($r2) > 0)
 			{
-				error_log("non zero subscribers: ".mysqli_num_rows($r2));
 			    while($row = mysqli_fetch_array($r2))
 			    {
 			    	$subscriber_id = $row['id'];
